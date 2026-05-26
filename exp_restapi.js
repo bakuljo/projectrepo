@@ -8,3 +8,17 @@ let app = exp();
 app.listen(9000, function() {
    console.log("exp started - rest API");
 })
+
+let con = mysql.createConnection({
+   host:"localhost",
+   user:"root",
+   password:"root",
+   database:"knowitdb"
+})
+
+con.connect(function(err) {
+   if(!err)
+      console.log("db connected");
+   else
+      console.log("db connection failed")
+})
