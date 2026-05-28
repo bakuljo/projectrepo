@@ -13,7 +13,22 @@ app.get('/hello',function(req,res){
     res.send("Hello world !!");
 })
 
-
+app.post('/login',function(req,res){
+   let uname = req.body.uname;
+   let pwd = req,body.pwd;
+   let query = "select * from users where username = ? and password = ?";
+   con.query(query, [uname,pwd], function(err, result) {
+      if(!err) {
+          if(result.length === 1) 
+               res.status(200).send("Login success");
+          else
+               res.status(200).send("Login failed"); 
+      }
+      else {
+          res.status(500).send("could not fetch");
+      }
+   })
+})
 
 let con = mysql.createConnection({
    host:"localhost",
