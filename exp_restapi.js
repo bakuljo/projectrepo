@@ -9,6 +9,12 @@ app.listen(9000, function() {
    console.log("exp started - rest API");
 })
 
+app.get('/hello',function(req,res){
+    res.send("Hello world !!");
+})
+
+
+
 let con = mysql.createConnection({
    host:"localhost",
    user:"root",
@@ -22,3 +28,4 @@ con.connect(function(err) {
    else
       console.log("db connection failed")
 })
+
