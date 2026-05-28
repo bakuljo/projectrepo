@@ -21,4 +21,8 @@ con.connect(function(err) {
       console.log("db connected");
    else
       console.log("db connection failed")
+}
+
+app.get('/hello',function(req,res){
+    res.send("Hello world !!");
 })
