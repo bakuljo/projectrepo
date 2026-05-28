@@ -8,3 +8,6 @@ let app = exp();
 app.listen(9000, function() {
    console.log("exp started - rest API");
 })
+app.get('/hello',function(req,res){
+    res.send("Hello world !!");
+})
