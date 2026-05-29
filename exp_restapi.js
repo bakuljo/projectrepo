@@ -14,7 +14,6 @@ app.get('/hello',function(req,res){
 })
 
 
-
 //db connect
 let con = mysql.createConnection({
    host:"localhost",
